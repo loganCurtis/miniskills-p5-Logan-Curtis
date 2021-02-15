@@ -1,10 +1,10 @@
 /********************************************************/
 //
-var speed=3;
+var speedX=3;
 var circleX=50;
-var circleY=0;
+var circleY=50;
 var dia=100
-var height=3;
+var speedY=0;
 
 
 /********************************************************/
@@ -20,17 +20,14 @@ function draw() {
 
 
 if(circleX>=width-dia/2){
-speed=-3;
+speedX=-3;
 }
 else if(circleX<width=dia/2){
-  speed=3;
+  speedX=3;
 }
-if(circleY>=400){
-height=-3;
-}
-else if(circleY<0){
-  height=3;
-}
+
+
+
   circleX=circleX+speed;
   circleY=circleY+height;
 }
