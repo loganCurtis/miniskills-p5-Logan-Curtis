@@ -1,10 +1,20 @@
 /********************************************************/
 //
+var bgColour
+var canvas
 /********************************************************/
 function setup() {
-  createCanvas(400, 400);
+ canvas = createCanvas(400, 400);
+ bgColour = color("blue");
+ canvas.mouseOver(changeColour);
+ canvas.mouseOut(changeColour)
+ canvas.mousePressed(changeColour)
+}
+
+function changeColour(){
+  bgColour = color(random(220))
 }
 
 function draw() {
-  background(220);
+  background(bgColour);
 }
