@@ -3,8 +3,8 @@
 /********************************************************/
 
 var ballsArray = [];
-const NUMBALLS = 5
-
+const NUMBALLS = 1
+var hits = 0 
 
 
 function setup() {
@@ -15,8 +15,10 @@ function setup() {
       x: 60,
       y: 20,
       dia: 50,
-      speedX: random(2,10),
-      speedY: random(2,10),
+     // speedX:   random(2,10),
+      //speedY:   random(2,10),
+      speedX : 3,
+      speedY : 3,
       r: random(50,150),
       g: random(50,150),
       b: random(50,150),
@@ -55,6 +57,7 @@ function setup() {
         this.y = random(150, width - this.dia / 2)
         this.x = random(150, width - this.dia / 2)
       },
+      
 
 
     }
@@ -65,12 +68,25 @@ function setup() {
 };
 
 
+
+function hit(){
+ var px2Ball = dist(ballsArray[0].x, ballsArray[0].y, mouseX, mouseY);
+
+  if(px2Ball<ballsArray.dia){
+    hits++;
+ console.log(hits)
+
+  }
+
+}
+
 function draw() {
   background(220);
   for (var i = 0;  i <ballsArray.length ; i++) {
     ballsArray[i].display();
     ballsArray[i].move();
     ballsArray[i].bounce();
+   
   }
 
 }
